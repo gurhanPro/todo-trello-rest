@@ -1,37 +1,9 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
-import CreateCardDto from './app.dto';
+import CreateCardDto from '../dto/create-card.dto';
 const request = require("request");
 
 @Injectable()
-export class AppService {
-
-  async getBoardList(): Promise<any> {
-    try {
-      let lists: any = await this.fetchBoardListRequest();
-      lists = JSON.parse(lists);
-      return lists
-    } catch (error) {
-      console.log(error);
-      return error
-    }
-  }
-
-  fetchBoardListRequest() {
-    const { TRELLO_KEY, TRELLO_TOKEN } = process.env;
-    console.log('keys: ', TRELLO_KEY, 'token: ', TRELLO_TOKEN);
-    
-    var options = {
-      'method': 'GET',
-      'url': `https://api.trello.com/1/boards/5fc66eabd8c4e11a83a2ac82/lists?key=${TRELLO_KEY}&token=${TRELLO_TOKEN}&cards=open`,
-    };
-    return new Promise((resolve, reject) => {
-      request(options, function (error, response, body) {
-        resolve(body)
-        reject(error)
-      });
-    })
-  }
-
+export class CardService {
 
   async createCard(createCardDto: CreateCardDto): Promise<any> {
     const { TRELLO_KEY, TRELLO_TOKEN } = process.env;

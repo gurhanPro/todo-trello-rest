@@ -1,3 +1,42 @@
+# Todo Trello React App
+This is the Rest Api that integrates with Trello and uses this repos https://github.com/gurhanPro/todo-trello-react as the UI
+
+It display available lists of a trello board and add a card to a list.
+
+The Rest API repo is available here https://github.com/gurhanPro/todo-trello-rest
+
+This appicaton is deployed to AWS and is available via http://52.209.17.29:3000/
+
+Design patern: container component pattern
+
+
+If you are running this application in localhost
+you will need to inject environment variables for trello which is shared via email
+
+TRELLO_KEY
+TRELLO_TOKEN
+
+I have used REDUX for state management and redux saga as a side effect library
+
+
+and for the back end, I have used NestJs library
+
+● How long did it take: 
+ -  2.5 hours for the react part
+ -  2 hours for the rest api
+
+ ● What would you do differently or improve in your submission?
+  - add more tests
+  - set CI/CD
+  - add more features i.e
+    - edit card 
+    - delete card
+    - move card to another list
+
+
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>

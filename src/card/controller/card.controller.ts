@@ -8,7 +8,6 @@ export class CardController {
 
   @Post('')
   createCard(@Body() createCardDto: CreateCardDto): Promise<any> {
-    console.log('createCardDto controller: ', createCardDto);
     return this.cardService.createCard(createCardDto);
   }
 
